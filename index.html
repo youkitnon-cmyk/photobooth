@@ -2,7 +2,7 @@
 <html lang="th">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Photo Booth Pro 📸</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
@@ -24,6 +24,7 @@
             <div id="result-area" style="display:none;">
                 <h3>✨ รูปถ่ายเสร็จแล้ว! ✨</h3>
                 <img id="photo-preview" src="" alt="Photobooth Strip">
+                <p class="small-text" style="margin-top: 10px;">(บนมือถือ แตะค้างที่รูปเพื่อบันทึก)</p>
                 
                 <div class="action-buttons">
                     <button id="download-btn" class="btn-primary">📥 ดาวน์โหลดรูปภาพ</button>
@@ -78,9 +79,7 @@
 
         </div> 
     </div>
-
-    <canvas id="canvas-hidden" style="display:none;"></canvas>
-
+    
     <script src="script.js"></script>
 </body>
 </html>
