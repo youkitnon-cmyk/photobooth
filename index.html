@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Booth Pro 📸</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="main-container">
+        
+        <div class="preview-panel">
+            <h1 class="logo">Photo Booth 📸</h1>
+            
+            <div class="video-wrapper">
+                <video id="video-feed" class="live-filter-preview" autoplay playsinline></video>
+                <div id="countdown-text"></div>
+                <div id="flash-overlay"></div>
+                <div id="status-text">พร้อมมั้ย?</div>
+            </div>
+
+            <div id="result-area" style="display:none;">
+                <h3>✨ รูปถ่ายเสร็จแล้ว! ✨</h3>
+                <img id="photo-preview" src="" alt="Photobooth Strip">
+                
+                <div class="action-buttons">
+                    <button id="download-btn" class="btn-primary">📥 ดาวน์โหลดรูปภาพ</button>
+                    <button onclick="location.reload()" class="btn-secondary">🔄 ถ่ายใหม่</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="control-panel">
+            <h2>ปรับแต่งรูปถ่าย 🎨</h2>
+
+            <div class="customize-section">
+                <h3>1. เลือกโทนสี (Filter)</h3>
+                <div class="filter-buttons-group">
+                    <button class="filter-btn active" data-filter="none">ปกติ</button>
+                    <button class="filter-btn" data-filter="grayscale(100%) contrast(1.2)">ขาวดำ</button>
+                    <button class="filter-btn" data-filter="sepia(0.6) contrast(1.1) brightness(1.1)">วินเทจ</button>
+                    <button class="filter-btn" data-filter="saturate(1.5) contrast(1.1)">สดใส</button>
+                    <button class="filter-btn" data-filter="hue-rotate(30deg) contrast(1.1)">โทนเย็น</button>
+                </div>
+            </div>
+
+            <div class="customize-section">
+                <h3>2. เลือกสีกรอบ (Frame)</h3>
+                <div class="color-palette">
+                    <div class="color-btn active" data-color="#ffffff" style="background:#ffffff; border:1px solid #ccc;"></div>
+                    <div class="color-btn" data-color="#ffcce0" style="background:#ffcce0;"></div>
+                    <div class="color-btn" data-color="#cceeff" style="background:#cceeff;"></div>
+                    <div class="color-btn" data-color="#e6ccff" style="background:#e6ccff;"></div>
+                    <div class="color-btn" data-color="#fff4cc" style="background:#fff4cc;"></div>
+                    <div class="color-btn" data-color="#ccffcc" style="background:#ccffcc;"></div>
+                    <div class="color-btn" data-color="#222222" style="background:#222222;"></div>
+                </div>
+            </div>
+
+            <div class="customize-section">
+                <h3>3. เลือกสติกเกอร์ (Stickers)</h3>
+                <p class="small-text">(คลิกเลือกไว้ ระบบจะสุ่มแปะให้หลังถ่ายเสร็จ)</p>
+                <div class="sticker-grid">
+                    <img class="sticker-btn" src="https://cdn-icons-png.flaticon.com/128/3662/3662814.png" alt="heart" crossorigin="anonymous">
+                    <img class="sticker-btn" src="https://cdn-icons-png.flaticon.com/128/3662/3662845.png" alt="star" crossorigin="anonymous">
+                    <img class="sticker-btn" src="https://cdn-icons-png.flaticon.com/128/3976/3976650.png" alt="flower" crossorigin="anonymous">
+                    <img class="sticker-btn" src="https://cdn-icons-png.flaticon.com/128/1023/1023656.png" alt="cat" crossorigin="anonymous">
+                    <img class="sticker-btn" src="https://cdn-icons-png.flaticon.com/128/742/742751.png" alt="smile" crossorigin="anonymous">
+                    <img class="sticker-btn" src="https://cdn-icons-png.flaticon.com/128/2355/2355325.png" alt="camera" crossorigin="anonymous">
+                </div>
+            </div>
+            
+            <div class="start-area">
+                <button id="start-btn">📸 เริ่มถ่าย (4 ช็อต)</button>
+            </div>
+
+        </div> 
+    </div>
+
+    <canvas id="canvas-hidden" style="display:none;"></canvas>
+
+    <script src="script.js"></script>
+</body>
+</html>
